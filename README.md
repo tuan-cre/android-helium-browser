@@ -6,8 +6,8 @@
 [![release](https://img.shields.io/github/v/release/jqssun/android-helium-browser)](https://github.com/jqssun/android-helium-browser/releases)
 
 An experimental Chromium-based web browser for Android with extensions support, based on
-- [Helium](https://github.com/imputnet/helium) by [imput](https://github.com/imputnet), as well as 
 - [Vanadium](https://github.com/GrapheneOS/Vanadium) by [GrapheneOS](https://github.com/GrapheneOS)
+- [Helium](https://github.com/imputnet/helium) by [imput](https://github.com/imputnet) (future patches pending GPLv2 compatibility)
 
 <img alt="Helium Browser for Android" src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" />
 
@@ -80,7 +80,7 @@ flowchart TD
     style n8 stroke:#FF6D00
 ```
 
-The full build aims to be consistent with [Helium](https://github.com/imputnet/helium-linux), which means additional patches are necessary before all features can be ported over. All [Vanadium](https://github.com/GrapheneOS/Vanadium) patches are applied by default. Further patches are underway. These are pending the resolution of licensing incompatibilities between the two browsers.
+All [Vanadium](https://github.com/GrapheneOS/Vanadium) patches are applied by default. While the full build aims to be consistent with [Helium](https://github.com/imputnet/helium-linux), downstream implementation of Helium patches is currently paused to ensure strict compliance with upstream licensing requirements. The diagram reflects the architecture of initial ported releases and serves as the target framework if resolution is achieved.
 
 ## Building
 
@@ -90,4 +90,4 @@ To build these releases yourself via CI (e.g. GitHub Actions), fork this reposit
 
 ## Credits
 
-This project would not have been possible without the huge community contributions from [Helium](https://github.com/imputnet/helium), [Vanadium](https://github.com/GrapheneOS/Vanadium), as well as [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) and various other upstream projects. All credit goes to the original authors and contributors. This project is currently being developed independently of upstream.
+This project would not have been possible without the huge community contributions from [Vanadium](https://github.com/GrapheneOS/Vanadium), [Helium](https://github.com/imputnet/helium), as well as [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) and various other upstream projects. All credit goes to the original authors and contributors. This project started around the same time as [Helium Browser for Linux](https://github.com/imputnet/helium-linux) but it is not officially affiliated with the upstream [Helium](https://github.com/imputnet/helium) project.

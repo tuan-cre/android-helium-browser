@@ -5,7 +5,7 @@ export VERSION=$(grep -m1 -o '[0-9]\+\(\.[0-9]\+\)\{3\}' vanadium/args.gn)
 export CHROMIUM_SOURCE=https://chromium.googlesource.com/chromium/src.git # https://github.com/chromium/chromium.git
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
-sudo apt-get install -y sudo lsb-release file nano git curl python3 python3-pillow
+sudo apt-get install -y sudo lsb-release file nano git curl python3 python3-pillow imagemagick
 
 # https://github.com/uazo/cromite/blob/master/tools/images/chr-source/prepare-build.sh
 git clone --depth 1 https://chromium.googlesource.com/chromium/tools/depot_tools.git
@@ -45,6 +45,7 @@ replace "$SCRIPT_DIR/vanadium/patches" "Vanadium" "Helium"
 replace "$SCRIPT_DIR/vanadium/patches" "vanadium" "helium"
 replace "$SCRIPT_DIR/vanadium/patches" ".helium.app" ".vanadium.app" # components
 git am --whitespace=nowarn --keep-non-patch $SCRIPT_DIR/vanadium/patches/*.patch
+cp -a $SCRIPT_DIR/res/. chrome/android/java/res_helium_base/
 
 gclient sync -D --no-history --nohooks
 gclient runhooks
